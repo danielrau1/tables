@@ -21,14 +21,14 @@ echo "ID: ".$_SESSION['id']." PASSWORD: ".$_SESSION['password']." CLASS: ".$_SES
 if(isset($_POST["bt2"])) insertPost($_POST['title'],$_SESSION['class'],$_POST['body']);
 if(isset($_SESSION['id']) or isset($_POST['bt2'])) {
 
- $posts=   showAll($_SESSION['class']);
+ $posts=showAll($_SESSION['class']);
 
     ?>
 
     <?php foreach ($posts as $post): ?>
         <h4><?php echo $post->title; ?></h4>
         <div>
-            <u> Written by <?php echo $post->id; ?></u>
+            <u> Written by Class: <?php echo $post->class; ?></u>
         </div>
         <p style="border:1px black solid"><?php echo $post->body; ?></p>
 
